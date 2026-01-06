@@ -1,43 +1,41 @@
 .section__contact {
-    /* Bootstrap 5 grid maneja el layout responsivo */
     margin-bottom: 2rem;
-}
-
-.section__contact__card {
+    /* NO pongas display:flex aquí; deja que bootstrap maneje .row */
+  }
+  
+  .section__contact__card {
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: 1.5rem;
     text-align: center;
-}
-
-.section__contact__card header {
+    /* opcional: asegurar que las columnas ocupen toda la altura de la fila */
+    height: 100%;
+  }
+  
+  .section__contact__card header {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     margin-bottom: 1rem;
-}
-
-.section__contact__card img {
+  }
+  
+  .section__contact__card img {
     width: 80px;
     height: 80px;
     object-fit: contain;
-}
-
-.section__contact__card h5 {
-    font-size: 1.5rem;
+  }
+  
+  .section__contact__card h5 {
+    font-size: 1.25rem; /* un poco más contenido en mobile */
     font-weight: 600;
     color: #000;
     margin: 0;
-}
-
-/* Ajustes responsivos para móviles */
-@media (max-width: 992px) {
-    .section__contact {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
+  }
+  
+  /* Si por alguna razón necesitás forzar wrap en tu override: */
+  .section__contact.row {
+    flex-wrap: wrap; /* solo si sobreescribiste display */
+  }
+  

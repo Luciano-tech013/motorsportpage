@@ -1,7 +1,7 @@
 .section__privacity__container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     flex-direction: column;
 }
 
@@ -12,4 +12,10 @@
 .section__privacity__description {
     display: block;
     max-width: 1000px;
+}
+
+@media (max-width: 996px) {
+    .section__privacity__container {
+        align-items: stretch; 
+    }
 }

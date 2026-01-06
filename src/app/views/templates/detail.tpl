@@ -7,7 +7,7 @@
             <p class="section-description">{$object->description}</p>
         </div>
         <a class="btn btn-primary m-4" href=''>Volver</a>
-    <section>
+    </section>
 </section>
 
 {include file="layout/footer.tpl"}

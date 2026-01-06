@@ -3,6 +3,11 @@
     margin-bottom: 150px;
 }
 
+.section__car__detail, .section__car__detail__description {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 @media (min-width: 1000px) {
     .section__car__detail {
         display: flex;

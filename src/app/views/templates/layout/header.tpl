@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="/assets/css/privacity.policy.css">
     <link rel="stylesheet" href="/assets/css/users.forms.css">
     <link rel="stylesheet" href="/assets/css/home.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="/assets/js/validator.form.js"></script>
     <title>MotorSportPage</title>
 </head>
 <body>
