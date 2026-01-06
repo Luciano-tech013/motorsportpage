@@ -3,16 +3,17 @@
     margin-bottom: 150px;
 }
 
-.section__car__detail {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+@media (min-width: 1000px) {
+    .section__car__detail {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 
-.section__car__detail__description {
-    width: 50%;
-    height: 50%;
+    .section__car__detail__description {
+        width: 50%;
+        height: 50%;
+    }
 }
-
 

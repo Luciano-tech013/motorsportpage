@@ -4,7 +4,7 @@
         <img width="300" class="img-fluid" src="/assets/logo_page.jpg"></h1>
     </figure>
     
-    <p class="text-center p-5 fs-5">Somos una pagina dedicada al mundo del automotor deportivo, y nos gusta aprender cada dia nuevos modelos de autos de competicion, la categoria a la que pertenecen y estudiar su parte técnica. Por eso brindamos esta herramienta para que te mostremos lo que sabemos hasta el dia de hoy, y podamos compartir esta pasion juntos. 
+    <p class="text-center fs-5 section-description">Somos una pagina dedicada al mundo del automotor deportivo, y nos gusta aprender cada dia nuevos modelos de autos de competicion, la categoria a la que pertenecen y estudiar su parte técnica. Por eso brindamos esta herramienta para que te mostremos lo que sabemos hasta el dia de hoy, y podamos compartir esta pasion juntos. 
     Los Vehículos de carretera o deportivos no son una excepción para nosotros, asi que es probable que algún que otro dia te encuentres un agrupamiento por ésta clase de automóviles.
     Debido a lo amplio que es este mundo, seleccionamos solo algunas categorias para mostrarte (BlancPain Series, Formula 1, WEC, NASCAR), con un aplio panorama de autos e informacion que podria interesarte.
     Ademas, esta herramienta cuenta con la opcion de poder 

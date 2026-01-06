@@ -65,38 +65,42 @@ class UserController {
         header("Location: " . BASE_URL);
     }
 
+    public function getRemoveAccountForm(): void {
+        $this->formView->showFormUser('remove.account.form.tpl');
+    }
+
     public function removeUser(string $id): void {
         AuthHelper::checkLoggedAndRedict();
 
         FlashErrorsHelper::clearErrors();
 
-        //Valido que los datos hayan venido del envío del formulario
-        if(!isset($_POST["password"]) || !isset($_POST["condition"])) {
-           header("Location: " . BASE_URL);
-           return; 
-        }
-
-        //Valido si existe el usuario con ese id para poder acceder a sus propiedades
-        $user = $this->userModel->getById($id);
-        if(empty($user)) {
+        //evito llamadas desde otro lugar
+        if(!isset($_POST['password_delete']) || !isset($_POST['confirmation_delete'])) {
             header("Location: " . BASE_URL);
             return;
         }
+        
+        //buscar datos del usuario (contraseña) y validar que el usuario exista
+        $user = $this->userModel->getById($id);
+        if(!$user) {
+            header("Location: " . BASE_URL);
+            return;
+        } 
 
-        //Valido que haya ingresado la contraseña correcta de su cuenta
-        if(!password_verify($_POST["password"], $user->password)) {
-            FlashErrorsHelper::addError("INVALID_PASSWORD", "Contraseña incorrecta. Intente nuevamente.");            $_SESSION["ERRORS"]["PASSWORD"] = "Contraseña incorrecta. Intente nuevamente.";
-            header("Location: " . $_SERVER["HTTP_REFERER"]);
+        //Validar contraseña
+        if(!password_verify($_POST['password_delete'], $user->password)) {
+            FlashErrorsHelper::addError("INVALID_PASSWORD", "La contraseña es incorrecta. La cuenta no se eliminó.");
+            header("Location: " . BASE_URL . "remove/account/form/");
             return;
         }
 
         //Valido que haya aceptado la condicion de eliminacion de cuenta
-        if(empty($_POST["condition"])) {
-            FlashErrorsHelper::addError("CONDITION", "Debe aceptar la responsabilidad de eliminar la cuenta");
+        if(empty($_POST["confirmation_delete"])) {
+            FlashErrorsHelper::addError("CONDITION_DELETE", "Debe aceptar la responsabilidad de eliminar la cuenta");
             header("Location: " . $_SERVER["HTTP_REFERER"]);
             return;
         }
-        
+
         $this->userModel->delete($id);
 
         AuthHelper::destroyLogin();

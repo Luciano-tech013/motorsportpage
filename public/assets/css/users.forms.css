@@ -1,5 +1,16 @@
-#signinForm, #signupForm {
-    width: 35%;
-    margin: 0 auto
+/* Utilidades responsivas para tamaños de fuente */
+.fs-md-5 {
+    font-size: 1.25rem !important;
+}
+
+/* Utilidades responsivas para controles de formulario */
+.form-control-md {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+}
+
+.btn-md {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
 }
 

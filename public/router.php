@@ -34,6 +34,8 @@ Router::addRoute('login', $instances->getAuthController(), 'login');
 
 Router::addRoute('account/logout', $instances->getAuthController(), 'logout');
 
+Router::addRoute('remove/account/form/', $instances->getUserController(), 'getRemoveAccountForm');
+
 Router::addRoute('remove/account/', $instances->getUserController(), 'removeUser');
 
 Router::addRoute('car/detail',  $instances->getCarController(), 'getCarDetail');

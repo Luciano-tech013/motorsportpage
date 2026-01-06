@@ -3,7 +3,7 @@
 <section class="section__privacity__container">
     <h1 class="text-center shadow p-3 mb-5 bg-body rounded">{$tittle}</h1>
     <div class="section__privacity__description">
-        <p class="text-center fs-5">Recogemos información para proporcionar los mejores servicios a todos nuestros
+        <p class="text-center section-description">Recogemos información para proporcionar los mejores servicios a todos nuestros
         usuarios: desde determinar
         información básica, como el idioma que hablas, hasta datos más complejos, como los anuncios que te
         resultarán más útiles, las personas que más te interesan online o los vídeos de YouTube que te pueden gustar. El tipo

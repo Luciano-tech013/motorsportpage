@@ -1,22 +1,43 @@
 .section__contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 80px;
+    /* Bootstrap 5 grid maneja el layout responsivo */
+    margin-bottom: 2rem;
 }
 
 .section__contact__card {
-    width: 10%;
-    height: 10%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.section__contact__card header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.section__contact__card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
 }
 
 .section__contact__card h5 {
-    font-size: 190%;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #000;
+    margin: 0;
+}
+
+/* Ajustes responsivos para móviles */
+@media (max-width: 992px) {
+    .section__contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 

@@ -85,6 +85,9 @@
                     {if isset($car) && !empty($car)}
                         <a class="btn btn-primary" href="">VOLVER</a>
                     {/if}
+                    {if isset($categories) && empty($categories)}
+                        <p class="text-danger">Para agregar un auto primero debes crear una categoria</p>
+                    {/if}
                 </div>
             </form>
         </div>

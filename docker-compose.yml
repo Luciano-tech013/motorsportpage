@@ -1,7 +1,7 @@
 services:
   db:
     image: mysql:8.0
-    container_name: motorsportpage_database_server
+    container_name: motorsportpage_database
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQLPASSWORD}
@@ -15,15 +15,21 @@ services:
       - motorsportpage-net
 
   web:
-    image: motorsportpage_app_image
-    container_name: motorsportpage_ssr_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: motorsportpage_image
+    container_name: motorsportpage_app
     ports:
       - "${APP_PORT}:80"
     depends_on:
       - db
     volumes:
+      # Montar directorios para desarrollo: los cambios se reflejan automáticamente sin reconstruir
       - ./public/:/var/www/html/public
       - ./src/:/var/www/src
+      # Montar vendor para que los cambios en dependencias se reflejen sin reconstruir
+      - ./src/vendor/:/var/www/src/vendor
     env_file:
       - .env
     networks:

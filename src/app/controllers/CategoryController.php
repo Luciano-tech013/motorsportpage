@@ -36,14 +36,23 @@ class CategoryController {
     }
 
     public function getFilterListOfCategory(string $id): void {
-        $categoryName = AuthHelper::isLogged() ? $this->categoryModel->getByIdAndUserIdWithName($id, AuthHelper::getUserId()) : $this->categoryModel->getByIdWithName($id);
-        if(!$categoryName){
+        $categoryName = null;
+        
+        //Si no está logueado, me traigo la categoria por defecto precargada
+        if(AuthHelper::isLogged()) {
+            $categoryName = $this->categoryModel->getByIdAndUserIdWithName($id, AuthHelper::getUserId());
+        } else {
+            $categoryName = $this->categoryModel->getByIdWithName($id);
+        }
+
+        //Si no hay nombre
+        if(empty($categoryName)){
             header("Location: " . BASE_URL);
             return;
         }
 
         $cars = $this->carModel->getAllByCategoryIdWithNameAndBrand($id);
-
+        
         $this->siteView->showCategoryFilterList($categoryName, $cars);
     }
 
@@ -97,7 +106,7 @@ class CategoryController {
             return;
         }
         
-        //Si no se envio el formulario, accion restrict
+        /*//Si no se envio el formulario, accion restrict
         if(!isset($_POST['cascade_delete'])) {
             try {
                 $this->categoryDeletionValidator->isDeletable($id);
@@ -117,7 +126,7 @@ class CategoryController {
 
         //Si se envio el formulario de aceptacion, elimino en cascada
         FlashErrorsHelper::clearErrors();
-        unset($_SESSION['CATEGORY']['ID_DELETABLE']);
+        unset($_SESSION['CATEGORY']['ID_DELETABLE']);*/
     
         $this->categoryModel->deleteByIdAndUserId($id, AuthHelper::getUserId());
         

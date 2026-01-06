@@ -1,0 +1,99 @@
+/* Estilos base para las secciones */
+.section-description {
+    font-size: clamp(1rem, 1rem + 0.5vw, 1.25rem);
+    line-height: 1.7;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilos para tablas en desktop */
+.table-responsive-wrapper {
+    margin: 0 1rem 2rem 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-responsive-wrapper table {
+    margin-bottom: 0;
+}
+
+.table-responsive-wrapper th {
+    font-weight: 600;
+    padding: 1rem;
+}
+
+.table-responsive-wrapper td {
+    padding: 0.75rem 1rem;
+}
+
+/* Títulos responsivos */
+.section-cars h1,
+.section-categories h1 {
+    font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+}
+
+/* ============================================
+   TRANSFORMACIÓN A TARJETAS EN MÓVILES
+   ============================================ */
+@media (max-width: 850px) {
+    .section-description {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    /* Oculta el thead en móviles */
+    .table-responsive-wrapper thead {
+        display: none;
+    }
+    
+    /* Cada fila se convierte en una tarjeta */
+    .table-responsive-wrapper table,
+    .table-responsive-wrapper tbody,
+    .table-responsive-wrapper tr {
+        display: block;
+        width: 100%;
+    }
+    
+    .table-responsive-wrapper tr {
+        /* Estilo de tarjeta */
+        background: white;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        /* Sombra sutil para efecto de elevación */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    /* Cada celda se convierte en una fila dentro de la tarjeta */
+    .table-responsive-wrapper td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 0;
+        border: none;
+        border-bottom: 1px solid #f0f0f0;
+        text-align: left;
+    }
+    
+    /* La última celda no necesita borde inferior */
+    .table-responsive-wrapper td:last-child {
+        border-bottom: none;
+    }
+    
+    /* Añade etiquetas antes de cada dato usando data-attributes */
+    .table-responsive-wrapper td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #495057;
+        margin-right: 1rem;
+        flex-shrink: 0;
+    }
+    
+    /* Los botones ocupan todo el ancho disponible del lado derecho */
+    .table-responsive-wrapper td .btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+    }
+}

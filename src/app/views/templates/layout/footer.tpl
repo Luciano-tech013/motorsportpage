@@ -41,5 +41,6 @@
         </div>
     </div>
 </footer>
+<script src="/assets/js/execute.confirm.remove.modal.js"></script>
 </body>
 </html>
